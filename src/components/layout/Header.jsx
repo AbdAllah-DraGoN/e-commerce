@@ -21,20 +21,20 @@ export default function Header() {
         }}
       >
         <h2>
-          <Link to="/">Exclusive</Link>
+          <Link to="/e-commerce/">Exclusive</Link>
         </h2>
         <ul style={{ display: "flex", gap: "1rem" }}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/e-commerce/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/e-commerce/about">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/e-commerce/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/e-commerce/signup">Sign Up</Link>
           </li>
         </ul>
         <div style={{ display: "flex", gap: "24px" }}>
