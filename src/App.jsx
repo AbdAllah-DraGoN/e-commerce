@@ -12,9 +12,9 @@ function App() {
       <Routes>
         <Route path="/e-commerc/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/e-commerc/products" element={<AllProducts />} />
-          <Route path="/e-commerc/products/:id" element={<Product />} />
-          <Route path="/e-commerc/*" element={<NotFound />} />
+          <Route path="products" element={<AllProducts />} />
+          <Route path="products/:id" element={<Product />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
