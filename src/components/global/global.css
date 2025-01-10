@@ -29,6 +29,7 @@
   gap: calc(44px / 3);
   padding: 0.5rem;
 }
+
 .one-product .images img {
   width: fit-content;
   height: 105px;
@@ -66,5 +67,23 @@
 }
 .one-product .add-to-cart .my-btn {
   margin: 0;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 767px) {
+  .one-product .product-show .main-image {
+    order: 1;
+  }
+  .one-product .images {
+    height: fit-content !important;
+    flex-direction: row;
+    order: 2;
+  }
+  .one-product .images img {
+    height: 85px;
+  }
+  .one-product .product-show .product-info {
+    order: 3;
+  }
 }
 /* === Product === */

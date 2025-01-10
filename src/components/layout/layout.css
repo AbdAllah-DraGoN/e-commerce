@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+  #header .my-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

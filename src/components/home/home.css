@@ -14,3 +14,34 @@
 .categories-menu li {
   line-height: 30px;
 }
+@media (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+  }
+}
+
+/*  */
+.porduct-container-1 {
+  text-align: center;
+}
+.porduct-container-1 > div {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 0px;
+}
+@media (max-width: 767px) {
+  .porduct-container-1 > div {
+    justify-content: center;
+  }
+  .categories-menu {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-main-color);
+    border-right: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

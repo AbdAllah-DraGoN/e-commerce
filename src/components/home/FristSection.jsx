@@ -72,16 +72,8 @@ function FristSection() {
             />
           </div>
         </SectionHeader>
-        <div style={{ textAlign: "center" }}>
-          <div
-            style={{
-              display: "flex",
-              gap: "1rem",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              margin: "1rem 0",
-            }}
-          >
+        <div className="porduct-container-1">
+          <div>
             {loading && "loading...."}
             {products &&
               products.map((e) => {

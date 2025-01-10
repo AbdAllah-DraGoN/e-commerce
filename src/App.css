@@ -42,25 +42,30 @@ a {
   margin: 0 auto;
 }
 /* Media Queries */
-/* @media (min-width: 768px) {
+@media (min-width: 576px) {
   .my-container {
-    width: 100%;
+    width: 540px;
   }
-} */
+}
+@media (min-width: 768px) {
+  .my-container {
+    width: 720px;
+  }
+}
 @media (min-width: 992px) {
   .my-container {
     width: 960px;
   }
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 1200px) {
   .my-container {
-    width: 1200px;
+    width: 1140px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1400px) {
   .my-container {
-    width: 1440px;
+    width: 1320px;
   }
 }
 
@@ -149,9 +154,7 @@ section.section {
   background-color: var(--bg-secondary-color);
   border-radius: 4px;
 }
-.css-mrxd2j-MuiRating-root {
-  font-size: 19px !important;
-}
+
 /* ===== Product Card ===== */
 
 /* Button */
