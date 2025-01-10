@@ -1,0 +1,42 @@
+.all-products .page-title {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.all-products .page-title hr {
+  width: 12rem;
+  border: 2px solid var(--text-main-color);
+}
+.all-products .products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 0px;
+}
+
+.all-products .products .productCard {
+  flex-grow: 1;
+}
+.all-products .pagination-btn {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.all-products .pagination-btn button {
+  padding: 0.5rem;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0;
+}
+.all-products .pagination-btn button.active {
+  background-color: #333 !important;
+  color: var(--bg-main-color) !important;
+}

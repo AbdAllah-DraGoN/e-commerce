@@ -1,0 +1,16 @@
+.hero-section {
+  display: flex;
+}
+.hero-section .carousel {
+  width: 80%;
+  padding: 20px 0 0 30px;
+}
+
+.categories-menu {
+  width: 20%;
+  padding: 20px 10px 0 20px;
+  border-right: 1px solid var(--border-main-color);
+}
+.categories-menu li {
+  line-height: 30px;
+}

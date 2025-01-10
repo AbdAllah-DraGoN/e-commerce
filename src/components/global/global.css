@@ -1,0 +1,70 @@
+/* Sectoin */
+.the-box {
+  background-color: var(--bg-secondary-color);
+  width: 20px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 16px;
+}
+/* === Sectoin === */
+/* Product */
+.one-product .product-path {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+.one-product .product-show {
+  display: grid;
+  /* grid-template-columns: repeat(7, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
+}
+.one-product .product-show > div {
+  height: 480px;
+}
+.one-product .images {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column; /* ياخد عمود واحد */
+  gap: calc(44px / 3);
+  padding: 0.5rem;
+}
+.one-product .images img {
+  width: fit-content;
+  height: 105px;
+  max-width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.one-product .main-image {
+  grid-column: span 3; /* ياخد 3 أعمدة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one-product .main-image img {
+  width: fit-content;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.one-product .product-info {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.one-product .product-info .price {
+  font-size: 30px;
+}
+.one-product .add-to-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.3rem;
+}
+.one-product .add-to-cart .my-btn {
+  margin: 0;
+}
+/* === Product === */
