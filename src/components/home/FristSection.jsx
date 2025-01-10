@@ -102,7 +102,7 @@ function FristSection() {
           <Button
             name="view all products"
             btnFunction={() => {
-              navigate("/products");
+              navigate("/e-commerce/products");
             }}
           />
         </div>

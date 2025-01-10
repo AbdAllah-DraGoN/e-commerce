@@ -13,7 +13,7 @@ export default function ProductCard({
   const handleClick = (e) => {
     if (e.target.className !== "add-to-cart") {
       // console.log("Show Product Has ID: " + id);
-      navigate(`/products/${id}`);
+      navigate(`/e-commerce/products/${id}`);
     } else if (e.target.className === "add-to-cart") {
       console.log("Add To Cart Product Has ID: " + id);
     }
