@@ -10,6 +10,8 @@ function Hero() {
         <li>mens {" >"}</li>
         <li>womens {" >"}</li>
         <li>laptops</li>
+        <li>accessories</li>
+        <li>sport</li>
         <li>sunglasses</li>
         <li>vehicle</li>
       </ul>
