@@ -42,17 +42,31 @@ a {
   margin: 0 auto;
 }
 /* Media Queries */
+@media (max-width: 575px) {
+  :root {
+    font-size: 10px;
+  }
+}
 @media (min-width: 576px) {
+  :root {
+    font-size: 12px;
+  }
   .my-container {
     width: 540px;
   }
 }
 @media (min-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
   .my-container {
     width: 720px;
   }
 }
 @media (min-width: 992px) {
+  :root {
+    font-size: 16px;
+  }
   .my-container {
     width: 960px;
   }
@@ -108,6 +122,34 @@ section.section {
   border-radius: 5px;
   margin-right: 16px;
 }
+.section-container {
+  margin: 5rem 0;
+}
+
+.section-container .section-header {
+  justify-content: space-between;
+}
+.section-container .section-header .section-name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: var(--text-main-color);
+}
+.section-container .slider-btns {
+  display: flex;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.products-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  margin: 1rem 0px;
+  /* for slider */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
 /* === Sectoin === */
 /* Product Card */
 .productCard .add-to-cart {
@@ -154,7 +196,11 @@ section.section {
   background-color: var(--bg-secondary-color);
   border-radius: 4px;
 }
-
+/* for slider */
+.products-container .productCard {
+  flex-shrink: 0 !important;
+  scroll-snap-align: start !important;
+}
 /* ===== Product Card ===== */
 
 /* Button */
@@ -171,3 +217,17 @@ button.my-btn {
   text-transform: capitalize;
 }
 /* === Button === */
+/* Arrow Button */
+.arrow-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0.5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* === Arrow Button === */

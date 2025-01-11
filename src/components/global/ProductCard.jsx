@@ -47,6 +47,8 @@ export default function ProductCard({
         position: "relative",
         justifyContent: "space-between",
         overflow: "hidden",
+        //
+        flexShrink: "0",
       }}
     >
       <div

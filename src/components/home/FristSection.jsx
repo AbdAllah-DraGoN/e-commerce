@@ -5,6 +5,7 @@ import ProductCard from "../global/ProductCard";
 import Section from "../global/section/Section";
 import SectionHeader from "../global/section/SectionHeader";
 import { useNavigate } from "react-router-dom";
+import ProductsContainer from "../products/ProductsContainer";
 
 function FristSection() {
   const selectItemsList = [
@@ -20,19 +21,15 @@ function FristSection() {
   const navigate = useNavigate();
   const [skip, setSkip] = useState(0);
   const [data, loading, error] = useGetApi(
-    `https://dummyjson.com/products?limit=3&skip=${skip}&select=${selectItemsList.join(
+    `https://dummyjson.com/products?limit=10&skip=${skip}&select=${selectItemsList.join(
       ","
     )}`
   );
   const [products, setProducts] = useState(null);
 
-  const prevBtn = useRef(null);
-  // const nextBtn = useRef();
-
   useEffect(() => {
     if (data) {
       // console.log(data.products);
-
       setProducts(data.products);
     }
     if (error) {
@@ -40,64 +37,23 @@ function FristSection() {
     }
   }, [data, error]);
 
-  useEffect(() => {
-    if (skip <= 0) {
-      prevBtn.current.style.opacity = "0.5";
-    } else if (skip >= 194) {
-      prevBtn.current.style.opacity = "0.5";
-    } else {
-      prevBtn.current.style.opacity = "1";
-    }
-  }, [skip]);
-
   return (
     <div>
       <Section title="today's">
-        <SectionHeader title="Falsh Sales">
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <Button
-              ref={prevBtn}
-              name="Prev Items"
-              btnFunction={() => {
-                if (skip <= 3) {
-                  setSkip(0);
-                } else {
-                  setSkip(() => skip - 3);
-                }
-              }}
-            />
-            <Button
-              name="Next Items"
-              btnFunction={() => setSkip(() => skip + 3)}
-            />
-          </div>
-        </SectionHeader>
-        <div className="porduct-container-1">
-          <div>
-            {loading && "loading...."}
-            {products &&
-              products.map((e) => {
-                return (
-                  <ProductCard
-                    key={e.id}
-                    id={e.id}
-                    description={e.description}
-                    thumbnail={e.thumbnail}
-                    title={e.title}
-                    price={e.price}
-                    discountPercentage={e.discountPercentage}
-                    rating={e.rating}
-                  />
-                );
-              })}
-          </div>
-          <Button
-            name="view all products"
-            btnFunction={() => {
-              navigate("/e-commerce/products");
-            }}
-          />
-        </div>
+        {/* <SectionHeader title="Falsh Sales"></SectionHeader> */}
+        {!loading && products ? (
+          <>
+            <ProductsContainer sectionName="Falsh Sales" data={products} />
+          </>
+        ) : (
+          "loading...."
+        )}
+        <Button
+          name="view our products"
+          btnFunction={() => {
+            navigate("/e-commerce/our-products");
+          }}
+        />
       </Section>
     </div>
   );
