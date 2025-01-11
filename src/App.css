@@ -44,12 +44,12 @@ a {
 /* Media Queries */
 @media (max-width: 575px) {
   :root {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media (min-width: 576px) {
   :root {
-    font-size: 12px;
+    font-size: 14px;
   }
   .my-container {
     width: 540px;
@@ -57,16 +57,13 @@ a {
 }
 @media (min-width: 768px) {
   :root {
-    font-size: 14px;
+    font-size: 16px;
   }
   .my-container {
     width: 720px;
   }
 }
 @media (min-width: 992px) {
-  :root {
-    font-size: 16px;
-  }
   .my-container {
     width: 960px;
   }

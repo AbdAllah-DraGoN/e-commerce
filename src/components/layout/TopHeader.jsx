@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function TopHeader() {
   return (
     <div
@@ -14,15 +16,16 @@ export default function TopHeader() {
       <p style={{ fontWeight: "300" }}>
         Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
       </p>
-      <a
+      <Link
+        to="/e-commerce/our-products"
         style={{
           textDecoration: "underline",
           fontWeight: "500",
           color: "#fff",
         }}
       >
-        ShopNow
-      </a>
+        Shop Now
+      </Link>
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useGetApi from "../../hooks/useGetApi";
 import Button from "../global/Button";
-import ProductCard from "../global/ProductCard";
 import Section from "../global/section/Section";
-import SectionHeader from "../global/section/SectionHeader";
 import { useNavigate } from "react-router-dom";
 import ProductsContainer from "../products/ProductsContainer";
 

@@ -5,9 +5,11 @@
   width: 80%;
   padding: 20px 0 0 30px;
 }
+
 .hero-section .carousel .slides {
   width: 100%;
   height: 100%;
+  display: flex;
   /* for slider */
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -16,31 +18,33 @@
 .hero-section .carousel .slides .slide {
   width: 100%;
   height: 100%;
-  flex-shrink: 0;
   background-image: url(/e-commerce/public/coding.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .hero-section .carousel .slides .slide .overlay {
-  position: absolute; /* Sit on top of the page content */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff5; /* Black background with opacity */
-  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: #fff6;
+  z-index: 1;
+  cursor: pointer;
 }
 .hero-section .carousel .slides .slide .silde-content {
   position: absolute;
   width: 50%;
   bottom: 2rem;
-  left: 2rem;
+  left: 4rem;
   z-index: 1;
+  color: var(--text-main-color);
 }
 .hero-section .carousel .slides .slide h3 {
   font-size: 2.5rem;
@@ -57,8 +61,6 @@
 }
 .categories-menu li {
   line-height: 30px;
-}
-@media (max-width: 767px) {
 }
 
 /*  */
@@ -92,10 +94,18 @@
   }
   .categories-menu li {
     flex-shrink: 0;
+    scroll-snap-align: start;
     padding: 0 1.5rem 0 0.5rem;
     border-right: 1px solid var(--border-main-color);
   }
   .categories-menu li:last-child {
     border-right: none;
+  }
+  /*  */
+  .hero-section .carousel {
+    width: 100%;
+    height: 16rem;
+    padding: 1rem;
+    display: flex;
   }
 }
