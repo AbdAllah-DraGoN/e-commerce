@@ -1,0 +1,68 @@
+/* Sectoin */
+
+.slider-section-container .section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.slider-section-container .section-head .row-1 {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.slider-section-container .section-head .row-1 .section-title {
+  font-size: 1rem;
+  color: var(--bg-secondary-color);
+}
+.slider-section-container .section-head .row-1 .the-box {
+  width: 20px;
+  height: 40px;
+  background-color: var(--bg-secondary-color);
+  border-radius: 5px;
+  margin-right: 16px;
+}
+
+.slider-section-container .section-head .row-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.slider-section-container .section-head .row-2 h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-right: 4rem;
+  color: var(--text-main-color);
+}
+
+.slider-section-container .slider-btns {
+  display: flex;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.slider-section-container .my-slider {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+
+  min-height: 10rem;
+  font-size: 1.5rem;
+  margin: 1rem 0px;
+
+  /* for slider */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+/* === Sectoin === */
+/* for slider */
+.slider-section-container .my-slider > div {
+  flex-shrink: 0 !important;
+  scroll-snap-align: start !important;
+}

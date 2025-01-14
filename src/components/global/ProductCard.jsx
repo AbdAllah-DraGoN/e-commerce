@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import addToCart from "../../functions/addToCart.js";
 
 export default function ProductCard({
   id,
@@ -9,15 +11,32 @@ export default function ProductCard({
   price,
   rating,
 }) {
-  const navigate = useNavigate();
-  const handleClick = (e) => {
-    if (e.target.className !== "add-to-cart") {
-      // console.log("Show Product Has ID: " + id);
-      navigate(`/e-commerce/products/${id}`);
-    } else if (e.target.className === "add-to-cart") {
-      console.log("Add To Cart Product Has ID: " + id);
+  function isMobileDevice() {
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    if (
+      userAgent.includes("mobile") ||
+      userAgent.includes("tablet") ||
+      userAgent.includes("android") ||
+      userAgent.includes("iphone") ||
+      userAgent.includes("ipad")
+    ) {
+      return true;
+    } else {
+      return false;
     }
-  };
+  }
+
+  // Because Mobiles not have Hover
+  const addToCartRef = useRef();
+  const isMoblie = isMobileDevice();
+  useEffect(() => {
+    if (isMoblie) {
+      if (addToCartRef.current) {
+        addToCartRef.current.style.cssText = "bottom: 0 !important";
+      }
+    }
+  }, [addToCartRef]);
 
   // For Discount
   let discount = {
@@ -25,15 +44,30 @@ export default function ProductCard({
     value: "",
   };
   if (discountPercentage > 0 && discountPercentage < 1) {
-    (discount.state = true),
-      (discount.value = `-${discountPercentage.toFixed(2)}%`);
+    discount.state = true;
+    discount.value = `-${discountPercentage.toFixed(2)}%`;
   } else if (discountPercentage > 1) {
-    (discount.state = true),
-      (discount.value = `-${discountPercentage.toFixed()}%`);
+    discount.state = true;
+    discount.value = `-${discountPercentage.toFixed()}%`;
   } else {
-    (discount.state = false), (discount.value = "");
+    discount.state = false;
+    discount.value = "";
   }
+  //
 
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    if (e.target.className !== "add-to-cart") {
+      navigate(`/e-commerce/products/${id}`);
+    } else if (e.target.className === "add-to-cart") {
+      addToCart({
+        id,
+        title,
+        price: (price - price * (discountPercentage / 100)).toFixed(2),
+        img: thumbnail,
+      });
+    }
+  };
   return (
     <div
       onClick={handleClick}
@@ -71,7 +105,9 @@ export default function ProductCard({
           alt={description}
           style={{ maxWidth: "70%", maxHeight: "72%" }}
         />
-        <button className="add-to-cart">Add to Cart</button>
+        <button className="add-to-cart" ref={addToCartRef}>
+          Add to Cart
+        </button>
         {discount.state && (
           <div className="discount-badge">{discount.value}</div>
         )}
@@ -128,6 +164,7 @@ export default function ProductCard({
             display: "flex",
             gap: "8px",
             alignItems: "flex-end",
+            fontSize: "1.2rem",
           }}
         >
           rating: {rating}

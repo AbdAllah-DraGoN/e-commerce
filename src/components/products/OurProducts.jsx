@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import useGetApi from "../../hooks/useGetApi";
 import ProductsContainer from "./ProductsContainer";
 import "./products.css";
+import Slider from "../global/slider/Slider";
+import ProductCard from "../global/ProductCard";
 
 const OurProducts = () => {
   const selectItemsList = [
@@ -86,25 +88,53 @@ const OurProducts = () => {
           "loading...."
         )}
 
-        {!loading2 && products2 ? (
-          <>
-            <ProductsContainer
-              sectionName="kitchen accessories"
-              data={products2}
-            />
-            <hr />
-          </>
-        ) : (
-          "loading...."
-        )}
-        {!loading3 && products3 ? (
-          <ProductsContainer
-            sectionName="mobile accessories"
-            data={products3}
-          />
-        ) : (
-          "loading...."
-        )}
+        <Slider
+          title="section 2"
+          header={products2 ? products2[0].category : "header"}
+          distance="270"
+        >
+          {loading2 && <span className="loading">loading....</span>}
+
+          {products2 &&
+            products2.map((e) => {
+              return (
+                <ProductCard
+                  key={e.id}
+                  id={e.id}
+                  description={e.description}
+                  thumbnail={e.thumbnail}
+                  title={e.title}
+                  price={e.price}
+                  discountPercentage={e.discountPercentage}
+                  rating={e.rating}
+                />
+              );
+            })}
+        </Slider>
+        <hr style={{ margin: "3rem 0" }} />
+        <Slider
+          title="section 3"
+          header={products3 ? products3[0].category : "header"}
+          distance="270"
+        >
+          {loading3 && <span className="loading">loading....</span>}
+
+          {products3 &&
+            products3.map((e) => {
+              return (
+                <ProductCard
+                  key={e.id}
+                  id={e.id}
+                  description={e.description}
+                  thumbnail={e.thumbnail}
+                  title={e.title}
+                  price={e.price}
+                  discountPercentage={e.discountPercentage}
+                  rating={e.rating}
+                />
+              );
+            })}
+        </Slider>
       </div>
     </div>
   );

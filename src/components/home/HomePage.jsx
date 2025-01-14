@@ -8,6 +8,8 @@ function HomePage() {
       <div className="my-container">
         <Hero />
         <FristSection />
+        <hr />
+        <FristSection />
       </div>
     </div>
   );

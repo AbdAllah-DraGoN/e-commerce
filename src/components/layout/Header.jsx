@@ -66,10 +66,18 @@ export default function Header() {
             </button>
           </div>
 
-          {/* <button
-            style={{ border: "none", background: "none", cursor: "pointer" }}
-          ></button>
-          <button
+          <Link
+            to="/e-commerce/cart"
+            style={{
+              background: "#eee",
+              cursor: "pointer",
+              borderRadius: "10px",
+              padding: "5px",
+            }}
+          >
+            cart
+          </Link>
+          {/*<button
             style={{ border: "none", background: "none", cursor: "pointer" }}
           ></button> */}
         </div>

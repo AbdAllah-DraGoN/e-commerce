@@ -4,6 +4,8 @@ import Button from "../global/Button";
 import Section from "../global/section/Section";
 import { useNavigate } from "react-router-dom";
 import ProductsContainer from "../products/ProductsContainer";
+import ProductCard from "../global/ProductCard";
+import Slider from "../global/slider/Slider";
 
 function FristSection() {
   const selectItemsList = [
@@ -36,23 +38,32 @@ function FristSection() {
   }, [data, error]);
 
   return (
-    <div>
-      <Section title="today's">
-        {/* <SectionHeader title="Falsh Sales"></SectionHeader> */}
-        {!loading && products ? (
-          <>
-            <ProductsContainer sectionName="Falsh Sales" data={products} />
-          </>
-        ) : (
-          "loading...."
-        )}
-        <Button
-          name="view our products"
-          btnFunction={() => {
-            navigate("/e-commerce/our-products");
-          }}
-        />
-      </Section>
+    <div style={{ textAlign: "center", margin: "5rem 0 3rem" }}>
+      <Slider title="today's" header="Falsh Sales" distance="270">
+        {loading && <span className="loading">loading....</span>}
+
+        {products &&
+          products.map((e) => {
+            return (
+              <ProductCard
+                key={e.id}
+                id={e.id}
+                description={e.description}
+                thumbnail={e.thumbnail}
+                title={e.title}
+                price={e.price}
+                discountPercentage={e.discountPercentage}
+                rating={e.rating}
+              />
+            );
+          })}
+      </Slider>
+      <Button
+        name="view our products"
+        btnFunction={() => {
+          navigate("/e-commerce/our-products");
+        }}
+      />
     </div>
   );
 }

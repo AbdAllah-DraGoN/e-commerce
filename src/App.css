@@ -36,6 +36,18 @@ a {
   text-decoration: none;
   color: var(--text-main-color);
 }
+
+input {
+  font-family: "Poppins", "sans-serif";
+  font-size: 1rem;
+  font-weight: 500;
+}
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+} */
+
+/*  */
 .my-container {
   width: 100%;
   padding: 0 15px;
@@ -186,6 +198,7 @@ section.section {
 
 .discount-badge {
   position: absolute;
+  font-size: 1rem;
   top: 12px;
   left: 12px;
   padding: 4px 12px;
@@ -202,7 +215,7 @@ section.section {
 
 /* Button */
 button.my-btn {
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 10px 30px;
   background-color: var(--bg-secondary-color);
   color: var(--bg-main-color);
@@ -219,11 +232,11 @@ button.my-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   margin: 0.5rem;
-  font-size: 3rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 400;
   border-radius: 50%;
   cursor: pointer;
 }

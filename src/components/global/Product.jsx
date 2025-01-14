@@ -25,12 +25,30 @@ function Product() {
 
   useEffect(() => {
     if (product) {
-      console.log(product);
+      // console.log(product);
     }
     if (error) {
       console.log(error);
     }
   }, [product, error]);
+
+  // For Discount
+  let discount = {
+    state: false,
+    value: "",
+  };
+  if (product) {
+    if (product.discountPercentage > 0 && product.discountPercentage < 1) {
+      discount.state = true;
+      discount.value = `-${product.discountPercentage.toFixed(2)}%`;
+    } else if (product.discountPercentage > 1) {
+      discount.state = true;
+      discount.value = `-${product.discountPercentage.toFixed()}%`;
+    } else {
+      discount.state = false;
+      discount.value = "";
+    }
+  }
 
   return (
     <div className="one-product">
@@ -87,7 +105,29 @@ function Product() {
               <div className="product-info">
                 <h3>{product.title}</h3>
                 <p>Rating: {product.rating}</p>
-                <p className="price">${product.price}</p>
+                {/* <p className="price">${product.price}</p> */}
+                <p className="price">
+                  $
+                  {discount.state
+                    ? (
+                        product.price -
+                        product.price * (product.discountPercentage / 100)
+                      ).toFixed(2)
+                    : product.price}
+                  {discount.state && (
+                    <del
+                      style={{
+                        margin: "1rem",
+                        fontSize: "1.5rem",
+                        fontWeight: "500",
+                        lineHeight: "24px",
+                        color: "#0005",
+                      }}
+                    >
+                      {product.price}$
+                    </del>
+                  )}
+                </p>
                 <p>{product.description}</p>
                 <hr />
                 <div>
